@@ -21,7 +21,8 @@ public class ProblemSet5 {
     public static void main(String[] args) {
         ProblemSet5 ps = new ProblemSet5();
 
-        System.out.println(ps.surroundMe("in","here"));
+        //System.out.println(ps.surroundMe("in","here"));
+        System.out.println(ps.endsMeet("poop", 1));
 
 
     }
@@ -57,7 +58,16 @@ public class ProblemSet5 {
     
      
     public String endsMeet(String text, int n) {
-            
+        String outcome;
+
+        if(text != null && text.length() > 0 && text.length() < 11 && n > 0 && n < text.length()){
+            String lastOfN = text.substring(text.length()-n);
+            String firstOfN = text.substring(0,n);
+            outcome = firstOfN + lastOfN;
+            return outcome;
+        } else {
+            return text;
+        }
     }
 
     
