@@ -23,7 +23,8 @@ public class ProblemSet5 {
 
         //System.out.println(ps.surroundMe("in","here"));
         //System.out.println(ps.endsMeet("poop", 1));
-        System.out.println(ps.middleMan("poopy"));
+        //System.out.println(ps.middleMan("poopy"));
+        System.out.println(ps.isCentered("hello", "elo"));
 
     }
     
@@ -98,13 +99,26 @@ public class ProblemSet5 {
      * 
      * Given two strings, determine whether or not target is equivalent to the middle
      * three characters of text.
-     
+     */
     
     public boolean isCentered(String text, String target) {
-
+        
+        String outcome;
+        if(text != null && text.length()%2 == 1){
+            
+            outcome = text.substring((text.length()/2)-1, (text.length()/2) +2);
+            if(target.length() == 3 && outcome.equals(target)){
+                return true;
+            } else {
+                return false;
+            }
+           
+        } else {
+            return false;
+        }
     }
     
-    */
+    
 
     /*
      * Exercise 5.
