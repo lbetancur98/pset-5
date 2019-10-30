@@ -22,8 +22,8 @@ public class ProblemSet5 {
         ProblemSet5 ps = new ProblemSet5();
 
         //System.out.println(ps.surroundMe("in","here"));
-        System.out.println(ps.endsMeet("poop", 1));
-
+        //System.out.println(ps.endsMeet("poop", 1));
+        System.out.println(ps.middleMan("poopy"));
 
     }
     
@@ -76,13 +76,22 @@ public class ProblemSet5 {
      * Exercise 3.
      * 
      * Given a string, return a new string using the middle three characters of text.
-    
+    */
     
     public String middleMan(String text) {
-        
-    }
+        String outcome;
 
-     */
+        if(text != null && text.length()%2 == 1){
+            
+            outcome = text.substring((text.length()/2)-1, (text.length()/2) +2);
+            return outcome;
+        } else {
+            return text;
+        }
+}
+
+
+     
     
     /*
      * Exercise 4.
