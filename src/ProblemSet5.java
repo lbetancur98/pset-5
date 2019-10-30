@@ -25,7 +25,9 @@ public class ProblemSet5 {
         //System.out.println(ps.endsMeet("poop", 1));
         //System.out.println(ps.middleMan("poopy"));
         //System.out.println(ps.isCentered("hell", "elo"));
-        System.out.println(ps.countMe("hello myo namo iso lukaso", 'o'));
+        //System.out.println(ps.countMe("hello myo namo iso lukaso", 'o'));
+        System.out.println(ps.triplets("aaabbbccc"));
+
 
     }
     
@@ -162,12 +164,30 @@ public class ProblemSet5 {
      * 
      * Given a string, compute the number of triplets in text.
      
-    
-    public int triplets(String text) {
+    */
 
+    public int triplets(String text) {
+        int count = 0;
+        if(text != null){
+            for (int i = 2; i < text.length() ; i++){
+                
+                if(text.charAt(i - 2) == text.charAt(i) && text.charAt(i -1) == text.charAt(i)){
+                    count++;
+                    
+                }
+            }
+            
+            return count;
+        } else {
+            return -1;
+        }
+
+
+        
+        
     }
 
-    */
+    
     
     /*
      * Exercise 7.
