@@ -21,10 +21,11 @@ public class ProblemSet5 {
     public static void main(String[] args) {
         ProblemSet5 ps = new ProblemSet5();
 
-        //System.out.println(ps.surroundMe("in","here"));
+        //System.out.println(ps.surroundMe("in","heree"));
         //System.out.println(ps.endsMeet("poop", 1));
         //System.out.println(ps.middleMan("poopy"));
-        System.out.println(ps.isCentered("hello", "elo"));
+        //System.out.println(ps.isCentered("hell", "elo"));
+        System.out.println(ps.countMe("hello myo namo iso lukaso", 'o'));
 
     }
     
@@ -125,12 +126,36 @@ public class ProblemSet5 {
      * 
      * Given a string and a character, compute the number of words that end in suffix.
      
-    
-    public int countMe(String text, char suffix) {
+    */
 
+    public int countMe(String text, char suffix) {
+        int count = 0;
+
+        if(text != null && Character.toString(suffix).matches("[a-zA-Z]")){
+            for(int i = 0 ; i <= text.length()-1 ; i++){
+                if(i != 0){
+                    
+                    if(i == text.length()-1){
+                        
+                        if(text.charAt(i) == suffix){
+                            count++;
+                        }
+                    } else{
+                        if(text.charAt(i) == suffix && text.charAt(i+1) == ' ' && text.charAt(i-1) != ' '){
+                            count++;
+                    }
+                   
+                    }
+                }
+                
+            }
+            return count;
+        } else{
+            return -1;
+        }
     }
 
-    */
+    
     
     /*
      * Exercise 6.
