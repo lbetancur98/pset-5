@@ -26,7 +26,8 @@ public class ProblemSet5 {
         //System.out.println(ps.middleMan("poopy"));
         //System.out.println(ps.isCentered("hell", "elo"));
         //System.out.println(ps.countMe("hello myo namo iso lukaso", 'o'));
-        System.out.println(ps.triplets("aaabbbccc"));
+        //System.out.println(ps.triplets("aaabbbcccddd"));
+        System.out.println(ps.addMe("12aa3"));
 
 
     }
@@ -193,13 +194,29 @@ public class ProblemSet5 {
      * Exercise 7.
      * 
      * Given a string, compute the sum of the digits in text.
-     
+      */
     
     public long addMe(String text) {
+        long sum = 0;
 
+        if(text != null){ 
+            for(int i = 0; i < text.length(); i++){
+                
+                if(Character.toString(text.charAt(i)).matches("[0-9]")){
+                    
+                    sum += Character.getNumericValue(text.charAt(i));
+                }
+            }
+
+            return sum;
+
+        } else {
+            return -1;
+        }
+        
     }
 
-    */
+   
     
     /*
      * Exercise 8.
