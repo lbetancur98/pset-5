@@ -27,7 +27,8 @@ public class ProblemSet5 {
         //System.out.println(ps.isCentered("hell", "elo"));
         //System.out.println(ps.countMe("hello myo namo iso lukaso", 'o'));
         //System.out.println(ps.triplets("aaabbbcccddd"));
-        System.out.println(ps.addMe("12aa3"));
+        //System.out.println(ps.addMe("12aa3"));
+        System.out.println(ps.sequence("aabbbdddddcccc"));
 
 
     }
@@ -222,13 +223,46 @@ public class ProblemSet5 {
      * Exercise 8.
      * 
      * Given a string, compute the length of the longest sequence.
-    
+    */
     
     public long sequence(String text) {
+        long count1 = 1;
+        long count2 = 1;
 
+        if(text != null){ 
+            for(int i =0; i< text.length()-1; i++){
+                if(text.charAt(i) == text.charAt(i+1)){
+                    
+                    count1++;
+                    
+                    
+                } 
+                    if(text.charAt(i) != text.charAt(i+1)){
+                        
+
+                        if(count1 > count2){
+                            
+                        
+                            count2 = count1;
+                            count1 = 1;
+                        }
+                        
+                    }
+
+                    if(i == text.length() - 2 && count1 > count2){
+                        
+                        return count1;
+                    }
+                
+            }
+
+            return count2;
+        } else {
+            return -1;
+        }
     }
 
-     */
+     
     
     /*
      * Exercise 9.
