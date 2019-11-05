@@ -21,15 +21,16 @@ public class ProblemSet5 {
     public static void main(String[] args) {
         ProblemSet5 ps = new ProblemSet5();
 
-        //System.out.println(ps.surroundMe("in","heree"));
-        //System.out.println(ps.endsMeet("poop", 1));
-        //System.out.println(ps.middleMan("poopy"));
-        //System.out.println(ps.isCentered("hell", "elo"));
-        //System.out.println(ps.countMe("hello myo namo iso lukaso", 'o'));
-        //System.out.println(ps.triplets("aaabbbcccddd"));
-        //System.out.println(ps.addMe("12aa3"));
-        //System.out.println(ps.sequence("aabbbdddddcccc"));
+        System.out.println(ps.surroundMe("in","here"));
+        System.out.println(ps.endsMeet("poop", 1));
+        System.out.println(ps.middleMan("poopy"));
+        System.out.println(ps.isCentered("hell", "elo"));
+        System.out.println(ps.countMe("hello myo namo iso lukaso", 'o'));
+        System.out.println(ps.triplets("aaabbbcccddd"));
+        System.out.println(ps.addMe("12aa3"));
+        System.out.println(ps.sequence("aabbbdddddcccc"));
         System.out.println(ps.intertwine("hello", "b"));
+        System.out.println(ps.isPalindrome("madam"));
 
 
     }
@@ -317,10 +318,31 @@ public class ProblemSet5 {
      * 
      * Given a string, determine whether or not it is a palindrome.
      
-    
+    */
     public boolean isPalindrome(String text) {
+        String front = "";
+        String back = "";
 
+        if(text == null){
+            return false;
+        }
+
+        for(int i = 0; i <= (text.length()-1)/2;i++){
+            front += text.charAt(i);
+        }
+
+        for(int j =text.length()-1 ; j >= (text.length()-1)/2; j--){
+            back += text.charAt(j);
+        }
+            
+        if(front.equals(back)){
+            return true;
+        } else {
+            return false;
+        }
+        
+        
     }
 
-    */
+    
 }
