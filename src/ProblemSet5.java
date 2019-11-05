@@ -28,7 +28,8 @@ public class ProblemSet5 {
         //System.out.println(ps.countMe("hello myo namo iso lukaso", 'o'));
         //System.out.println(ps.triplets("aaabbbcccddd"));
         //System.out.println(ps.addMe("12aa3"));
-        System.out.println(ps.sequence("aabbbdddddcccc"));
+        //System.out.println(ps.sequence("aabbbdddddcccc"));
+        System.out.println(ps.intertwine("hello", "b"));
 
 
     }
@@ -269,13 +270,47 @@ public class ProblemSet5 {
      * 
      * Given two strings, return a new string built by intertwining each of the
      * characters of a and b.
-     
+     */
     
     public String intertwine(String a, String b) {
 
+        String c = "";
+
+        if(a == null || b == null){
+            return null;
+        }
+
+        if(a.length() >= b.length()){
+            for(int i = 0; i <= a.length()-1; i++){
+                c += a.charAt(i);
+                if( i <= b.length()-1 ){
+                    c += b.charAt(i);
+                    
+                }
+                
+                
+            }
+
+            return c;
+        } else if(b.length() >= a.length()){
+            for(int i = 0; i <= b.length()-1; i++){
+                
+                if( i <= a.length()-1 ){
+                    c += a.charAt(i);
+                    
+                }
+                c += b.charAt(i);
+                
+            }
+
+            return c;
+        }
+
+        return null;
+
     }
 
-    */
+    
     
     /*
      * Exercise 10.
